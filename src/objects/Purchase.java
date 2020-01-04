@@ -1,9 +1,10 @@
+package objects;
+
+import decorator.Game;
 import strategy.payment.Cash;
 import strategy.payment.Payment;
 import strategy.sales.None;
 import strategy.sales.Sale;
-
-import java.util.Date;
 
 public class Purchase {
     private Customer customer;
@@ -48,18 +49,18 @@ public class Purchase {
         this.payment = payment;
     }
 
-    public double netPrice() {
-        return (game.getCost()) - (game.getCost() * sale.applyDiscount());
+    private double netPrice() {
+        return (game.cost() - (game.cost() * sale.applyDiscount()));
     }
 
     @Override
     public String toString() {
-        return "Purchase:\n" +
+        return "objects.Purchase:\n" +
                 " customer=" + customer.getName() +
                 "\n sale=" + sale.getName() +
                 "\n game=" + game.getName() +
                 "\n payment=" + payment.toString() +
-                "\n price =" + netPrice();
+                "\n price=" + String.format("€%.2f", netPrice());
     }
 }
 

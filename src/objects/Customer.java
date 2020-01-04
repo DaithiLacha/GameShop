@@ -1,4 +1,4 @@
-
+package objects;
 
 import java.util.Date;
 
@@ -33,7 +33,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer{" +
+        return "objects.Customer{" +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
                 ", dob=" + dob +

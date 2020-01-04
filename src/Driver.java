@@ -1,3 +1,11 @@
+import decorator.CollectorsEdition;
+import decorator.PCGame;
+import decorator.SeasonPass;
+import objects.Purchase;
+import objects.Customer;
+import decorator.Game;
+import strategy.sales.Christmas;
+
 import java.util.GregorianCalendar;
 
 public class Driver {
@@ -5,17 +13,18 @@ public class Driver {
         Customer dave = new Customer();
         dave.setName("David O'Connor");
         dave.setAddress("Tralee");
-        dave.setDob(new GregorianCalendar(01,01,1960).getTime());
+        dave.setDob(new GregorianCalendar(1, 1,1960).getTime());
 
-        Game gta = new Game();
+        Game gta = new PCGame();
+        gta = new CollectorsEdition(gta);
+        gta = new SeasonPass(gta);
         gta.setName("Grand Theft Auto V");
-        gta.setCost(59.99);
         gta.setGenre("Open World");
 
         Purchase daveGta = new Purchase();
         daveGta.setCustomer(dave);
         daveGta.setGame(gta);
-        daveGta.toString();
+        daveGta.setSale(new Christmas());
         System.out.println(daveGta.toString());
     }
 }

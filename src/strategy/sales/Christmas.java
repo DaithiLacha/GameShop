@@ -1,6 +1,6 @@
 package strategy.sales;
 
-public class Christmas {
+public class Christmas implements Sale{
     private String name;
 
     public Christmas() {

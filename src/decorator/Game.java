@@ -1,6 +1,8 @@
-public class Game {
+package decorator;
+
+public abstract class Game {
     private String name;
-    private double cost;
+    String platform = "Unknown Platform";
     private String genre;
 
     public String getName() {
@@ -11,14 +13,6 @@ public class Game {
         this.name = name;
     }
 
-    public double getCost() {
-        return cost;
-    }
-
-    public void setCost(double cost) {
-        this.cost = cost;
-    }
-
     public String getGenre() {
         return genre;
     }
@@ -26,4 +20,6 @@ public class Game {
     public void setGenre(String genre) {
         this.genre = genre;
     }
+
+    public abstract double cost();
 }
