@@ -1,6 +1,7 @@
 package objects;
 
 import decorator.Game;
+import observers.Customer;
 import strategy.payment.Cash;
 import strategy.payment.Payment;
 import strategy.sales.None;
@@ -55,7 +56,7 @@ public class Purchase {
 
     @Override
     public String toString() {
-        return "objects.Purchase:\n" +
+        return "Purchase:\n" +
                 " customer=" + customer.getName() +
                 "\n sale=" + sale.getName() +
                 "\n game=" + game.getName() +

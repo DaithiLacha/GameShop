@@ -29,7 +29,7 @@ public class Paypal implements Payment{
         System.out.println("Purchased by " + name + "Paid by cash: €" + sum);
     }
 
-    public void payPalInfo() {
+    private void payPalInfo() {
         BufferedReader info = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.println("Username: ");
@@ -44,9 +44,8 @@ public class Paypal implements Payment{
 
     @Override
     public String toString() {
-        return "Paypal{" +
-                "username='" + username + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return "Paypal {" +
+                "\n\t\tusername='" + username +
+                "\n\t\temail='" + email + "\n\t}";
     }
 }
