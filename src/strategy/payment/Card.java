@@ -11,6 +11,25 @@ public class Card implements Payment {
     private String cvv;
     private String expDate;
 
+    public void makePayment(double sum, String name) {
+        BufferedReader info = new BufferedReader(new InputStreamReader(System.in));
+        try {
+            System.out.println("Card Name: ");
+            cardName = info.readLine();
+
+            System.out.println("Card Number: ");
+            cardNum = info.readLine();
+
+            System.out.println("Card CVV: ");
+            cvv = info.readLine();
+
+            System.out.println("Expiry Date: ");
+            expDate = info.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public String getCardNum() {
         return cardNum;
     }
@@ -51,24 +70,5 @@ public class Card implements Payment {
 
     public void setCardName(String cardName) {
         this.cardName = cardName;
-    }
-
-    public void makePayment(double sum, String name) {
-        BufferedReader info = new BufferedReader(new InputStreamReader(System.in));
-        try {
-            System.out.println("Card Name: ");
-            cardName = info.readLine();
-
-            System.out.println("Card Number: ");
-            cardNum = info.readLine();
-
-            System.out.println("Card CVV: ");
-            cvv = info.readLine();
-
-            System.out.println("Expiry Date: ");
-            expDate = info.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }

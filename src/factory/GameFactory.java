@@ -7,18 +7,17 @@ import decorator.XBoxGame;
 
 
 public class GameFactory {
-    Game createGame(String gameTypeType) {
+    Game createGame(String gameType) {
         Game game = null;
 
-        if(gameTypeType.equalsIgnoreCase("PC")) {
+        if(gameType.equalsIgnoreCase("PC")) {
             game = new PCGame();
-        }else if(gameTypeType.equalsIgnoreCase("XBox")) {
+        }else if(gameType.equalsIgnoreCase("XBox")) {
             game = new XBoxGame();
-        }else if(gameTypeType.equalsIgnoreCase("Play Station")) {
+        }else if(gameType.equalsIgnoreCase("Play Station")) {
             game = new PlayStationGame();
-        }else {
-            game = new PCGame();
         }
+
         return game;
     }
 }

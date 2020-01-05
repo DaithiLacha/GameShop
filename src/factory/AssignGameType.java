@@ -13,6 +13,10 @@ public class AssignGameType {
         Game game;
         game = factory.createGame(type);
 
+       game.assignName();
+       game.assignGenre();
+
+
         return game;
     }
 }

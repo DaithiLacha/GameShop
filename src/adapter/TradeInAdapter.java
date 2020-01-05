@@ -3,7 +3,7 @@ package adapter;
 import strategy.payment.Payment;
 
 public class TradeInAdapter implements Payment {
-    TradeIn tradeIn;
+    private TradeIn tradeIn;
 
     public TradeInAdapter(TradeIn tradeIn) {
         this.tradeIn = tradeIn;
@@ -16,6 +16,6 @@ public class TradeInAdapter implements Payment {
 
     @Override
     public String toString() {
-        return "Trade In\n" + tradeIn.toString();
+        return "Trade In\n" + tradeIn.makeTrade();
     }
 }

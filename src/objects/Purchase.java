@@ -67,6 +67,7 @@ public class Purchase {
                     "\nTitle: " + game.getName() +
                     "\nPayment Type: " + payment.toString() +
                     "\nFull Details: " + game.getDescription() +
+                    "\nSale: " + sale.getName() + " " + sale.applyDiscount()*100 + "% discount" +
                     "\nTotal: " + String.format("€%.2f", netPrice());
         }
     }

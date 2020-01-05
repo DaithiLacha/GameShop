@@ -2,6 +2,7 @@ package observer;
 
 import strategy.memberships.Membership;
 
+import javax.swing.*;
 import java.util.Date;
 
 public class Customer implements Observer {
@@ -14,6 +15,23 @@ public class Customer implements Observer {
     public Customer(NewsUpdate newsUpdate) {
         this.newsUpdate = newsUpdate;
         membership=Membership.STANDARD;
+    }
+
+    public void setMembership(Membership membership) {
+        if(this.membership == Membership.PREMIUM && membership == Membership.STANDARD) {
+            this.membership = membership;
+            newsUpdate.removeObserver(this);
+        }else if(this.membership == Membership.STANDARD && membership == Membership.PREMIUM) {
+            this.membership = membership;
+            newsUpdate.registerObserver(this);
+        }else {
+            this.membership = membership;
+        }
+    }
+
+    @Override
+    public void update(String newsUpdate) {
+        JOptionPane.showMessageDialog(null, "Hello " + name + "\nNews update available: \n" + newsUpdate);
     }
 
     public String getName() {
@@ -44,22 +62,7 @@ public class Customer implements Observer {
         return membership;
     }
 
-    public void setMembership(Membership membership) {
-        if(this.membership == Membership.PREMIUM && membership == Membership.STANDARD) {
-            this.membership = membership;
-            newsUpdate.removeObserver(this);
-        }else if(this.membership == Membership.STANDARD && membership == Membership.PREMIUM) {
-            this.membership = membership;
-            newsUpdate.registerObserver(this);
-        }else {
-            this.membership = membership;
-        }
-    }
 
-    @Override
-    public void update(String newsUpdate) {
-        System.out.println("News update available: \n" + newsUpdate);
-    }
 
     @Override
     public String toString() {

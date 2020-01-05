@@ -4,25 +4,26 @@ import decorator.Game;
 import factory.AssignGameType;
 import factory.GameFactory;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import javax.swing.*;
 
 public class TradeIn {
     private double value;
     private Game gameTradingIn;
 
     public TradeIn() {
-        String platform = "";
-        BufferedReader info = new BufferedReader(new InputStreamReader(System.in));
+        boolean isValid = false;
+        String platform;
         GameFactory gameFactory = new GameFactory();
         AssignGameType assignGameType = new AssignGameType(gameFactory);
-        try {
-            System.out.println("Platform: ");
-            platform = (info.readLine());
+        platform = JOptionPane.showInputDialog("Enter Trade in Platform");
 
-        } catch (IOException e) {
-            e.printStackTrace();
+        while(!isValid) {
+            if(!platform.equalsIgnoreCase("PC") && !platform.equalsIgnoreCase("xbox") &&
+                !platform.equalsIgnoreCase("play station")) {
+                platform = JOptionPane.showInputDialog("Platform not found please re-enter: ");
+            }else {
+                isValid = true;
+            }
         }
         gameTradingIn = assignGameType.determineGame(platform);
     }
@@ -43,23 +44,10 @@ public class TradeIn {
         this.gameTradingIn = gameTradingIn;
     }
 
-    public void makeTrade() {
-        BufferedReader info = new BufferedReader(new InputStreamReader(System.in));
-        try {
-            System.out.println("Title: ");
-            gameTradingIn.setName(info.readLine());
-
-            System.out.println("Genre: ");
-            gameTradingIn.setGenre(info.readLine());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public String toString() {
+    String makeTrade() {
         return "Title traded in: " + gameTradingIn.getName() +
                 "\nPlatform: " + gameTradingIn.getDescription() +
                 "\nGenre: " + gameTradingIn.getGenre();
     }
+
 }

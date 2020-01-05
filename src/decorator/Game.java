@@ -1,5 +1,7 @@
 package decorator;
 
+import javax.swing.*;
+
 public abstract class Game {
     private String name;
     String description = "Unknown Platform";
@@ -11,6 +13,14 @@ public abstract class Game {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void assignName() {
+        name = JOptionPane.showInputDialog("Enter title");
+    }
+
+    public void assignGenre() {
+        genre = JOptionPane.showInputDialog("Enter genre");
     }
 
     public String getName() {

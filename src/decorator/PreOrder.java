@@ -17,7 +17,7 @@ public class PreOrder extends AddOnDecorator {
 
     @Override
     public String getDescription() {
-        return game.getDescription() + "and Preorder";
+        return game.getDescription() + " and Preorder";
     }
 
     public double cost() {
