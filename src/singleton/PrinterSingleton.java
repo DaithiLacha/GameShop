@@ -10,7 +10,7 @@ public class PrinterSingleton {
         sheetsInPrinter = 0;
     }
 
-    static synchronized PrinterSingleton getInstance() {
+    public static synchronized PrinterSingleton getInstance() {
         if (uniquePrinter == null) {
             System.out.println("Creating unique instance of Register");
             uniquePrinter = new PrinterSingleton();
@@ -26,14 +26,14 @@ public class PrinterSingleton {
         PrinterSingleton.uniquePrinter = uniquePrinter;
     }
 
-    void fillPrinter() {
+    public void fillPrinter() {
         if(isEmpty) {
             sheetsInPrinter += 100;
             isEmpty = false;
         }
     }
 
-    void printJob(int numOfSheets) {
+    public void printJob(int numOfSheets) {
         for (int i = 0; i < numOfSheets; i++) {
             if(sheetsInPrinter >= 1) {
                 sheetsInPrinter--;
