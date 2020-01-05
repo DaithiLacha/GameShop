@@ -12,7 +12,7 @@ public class PrinterSingleton {
 
     public static synchronized PrinterSingleton getInstance() {
         if (uniquePrinter == null) {
-            System.out.println("Creating unique instance of Register");
+            System.out.println("Creating unique instance of Printer");
             uniquePrinter = new PrinterSingleton();
         }
         return uniquePrinter;
