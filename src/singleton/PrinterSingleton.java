@@ -1,7 +1,7 @@
 package singleton;
 
 public class PrinterSingleton {
-    private static PrinterSingleton uniqueRegister;
+    private volatile static PrinterSingleton uniqueRegister;
     private boolean isEmpty ;
     private int sheetsInPrinter;
 
@@ -10,7 +10,7 @@ public class PrinterSingleton {
         sheetsInPrinter = 0;
     }
 
-    public static synchronized PrinterSingleton getInstance() {
+    static synchronized PrinterSingleton getInstance() {
         if (uniqueRegister == null) {
             System.out.println("Creating unique instance of Register");
             uniqueRegister = new PrinterSingleton();
@@ -26,14 +26,14 @@ public class PrinterSingleton {
         PrinterSingleton.uniqueRegister = uniqueRegister;
     }
 
-    public void fillPrinter() {
+    void fillPrinter() {
         if(isEmpty) {
             sheetsInPrinter += 100;
             isEmpty = false;
         }
     }
 
-    public void printJob(int numOfSheets) {
+    void printJob(int numOfSheets) {
         for (int i = 0; i < numOfSheets; i++) {
             if(sheetsInPrinter >= 1) {
                 sheetsInPrinter--;

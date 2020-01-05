@@ -28,6 +28,12 @@ public class TradeIn {
         gameTradingIn = assignGameType.determineGame(platform);
     }
 
+    String makeTrade() {
+        return "Title traded in: " + gameTradingIn.getName() +
+                "\nPlatform: " + gameTradingIn.getDescription() +
+                "\nGenre: " + gameTradingIn.getGenre();
+    }
+
     public double getValue() {
         return value;
     }
@@ -43,11 +49,4 @@ public class TradeIn {
     public void setGameTradingIn(Game gameTradingIn) {
         this.gameTradingIn = gameTradingIn;
     }
-
-    String makeTrade() {
-        return "Title traded in: " + gameTradingIn.getName() +
-                "\nPlatform: " + gameTradingIn.getDescription() +
-                "\nGenre: " + gameTradingIn.getGenre();
-    }
-
 }

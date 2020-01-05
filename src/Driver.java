@@ -52,9 +52,9 @@ public class Driver {
         daveGta.setCustomer(dave);
         daveGta.setGame(gta);
         daveGta.setSale(new Christmas());
-//        TradeIn tradeIn = new TradeIn();
-//        daveGta.setPayment(new TradeInAdapter(tradeIn));
-        daveGta.setPayment(new Cash());
+        TradeIn tradeIn = new TradeIn();
+        daveGta.setPayment(new TradeInAdapter(tradeIn));
+//        daveGta.setPayment(new Cash());
         JOptionPane.showMessageDialog(null, daveGta.printReceipt(),
                 "Receipt", JOptionPane.INFORMATION_MESSAGE);
 
