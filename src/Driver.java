@@ -1,6 +1,8 @@
 import decorator.CollectorsEdition;
 import decorator.PCGame;
 import decorator.SeasonPass;
+import factory.AssignSale;
+import factory.SaleFactory;
 import objects.Purchase;
 import observers.Customer;
 import decorator.Game;
@@ -46,8 +48,12 @@ public class Driver {
         Purchase daveGta = new Purchase();
         daveGta.setCustomer(dave);
         daveGta.setGame(gta);
-        daveGta.setSale(new Christmas());
+        SaleFactory saleFactory = new SaleFactory();
+        AssignSale assignSale = new AssignSale(saleFactory);
+        daveGta.setSale(assignSale.determineSale("Christmas"));
         daveGta.setPayment(new Paypal());
         System.out.println(daveGta.toString());
+
+
     }
 }

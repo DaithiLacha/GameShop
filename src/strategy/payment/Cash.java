@@ -2,7 +2,7 @@ package strategy.payment;
 
 public class Cash implements Payment {
     public void makePayment(double sum, String name) {
-        System.out.println("Purchased by " + name + "Paid by cash: €" + sum);
+        System.out.println("Purchased by " + name + "\nPaid by cash: €" + Math.round(sum*100.0)/100.0);
     }
 
     @Override

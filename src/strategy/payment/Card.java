@@ -12,7 +12,7 @@ public class Card implements Payment {
 
     public void makePayment(double sum, String name) {
         cardInfo();
-        System.out.println("Purchased by " + name + "Paid by cash: €" + sum);
+        System.out.println("Purchased by " + name + "\nPaid by card: €" + Math.round(sum*100.0)/100.0);
     }
 
     public String getCardNum() {
@@ -39,7 +39,7 @@ public class Card implements Payment {
         this.expDate = expDate;
     }
 
-    public void cardInfo() {
+    private void cardInfo() {
         BufferedReader info = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.println("Card Number: ");

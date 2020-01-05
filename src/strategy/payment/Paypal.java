@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import static jdk.nashorn.internal.objects.NativeMath.round;
+
 public class Paypal implements Payment{
     private String username;
     private String email;
@@ -26,7 +28,7 @@ public class Paypal implements Payment{
 
     public void makePayment(double sum, String name) {
         payPalInfo();
-        System.out.println("Purchased by " + name + "Paid by cash: €" + sum);
+        System.out.println("Purchased by: " + name + "\nPaid by PayPal: €" + Math.round(sum*100.0)/100.0);
     }
 
     private void payPalInfo() {
