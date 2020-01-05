@@ -1,5 +1,12 @@
 package strategy.payment;
 
+/*
+ * David O'Connor
+ * Software Design Patterns CA - GameShop
+ * github link: https://github.com/DaithiLacha/GameShop
+ */
+
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

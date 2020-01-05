@@ -1,5 +1,11 @@
 package objects;
 
+/*
+ * David O'Connor
+ * Software Design Patterns CA - GameShop
+ * github link: https://github.com/DaithiLacha/GameShop
+ */
+
 import adapter.TradeInAdapter;
 import decorator.Game;
 import observer.Customer;

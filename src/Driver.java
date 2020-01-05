@@ -14,6 +14,13 @@ import strategy.sales.Christmas;
 import javax.swing.*;
 import java.util.GregorianCalendar;
 
+/*
+ * David O'Connor
+ * Software Design Patterns CA - GameShop
+ * github link: https://github.com/DaithiLacha/GameShop
+ */
+
+
 public class Driver {
     public static void main(String[] args) {
         NewsUpdate newsUpdate = new NewsUpdate();

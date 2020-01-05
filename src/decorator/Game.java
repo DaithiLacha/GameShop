@@ -1,5 +1,11 @@
 package decorator;
 
+/*
+ * David O'Connor
+ * Software Design Patterns CA - GameShop
+ * github link: https://github.com/DaithiLacha/GameShop
+ */
+
 import javax.swing.*;
 
 public abstract class Game {

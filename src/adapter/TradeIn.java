@@ -6,6 +6,12 @@ import factory.GameFactory;
 
 import javax.swing.*;
 
+/*
+ * David O'Connor
+ * Software Design Patterns CA - GameShop
+ * github link: https://github.com/DaithiLacha/GameShop
+ */
+
 public class TradeIn {
     private double value;
     private Game gameTradingIn;

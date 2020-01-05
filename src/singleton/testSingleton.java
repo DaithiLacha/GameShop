@@ -1,5 +1,12 @@
 package singleton;
 
+/*
+ * David O'Connor
+ * Software Design Patterns CA - GameShop
+ * github link: https://github.com/DaithiLacha/GameShop
+ */
+
+
 public class testSingleton {
     public static void main(String[] args) {
         PrinterSingleton printer = PrinterSingleton.getInstance();

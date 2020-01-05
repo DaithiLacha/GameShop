@@ -1,5 +1,12 @@
 package singleton;
 
+/*
+ * David O'Connor
+ * Software Design Patterns CA - GameShop
+ * github link: https://github.com/DaithiLacha/GameShop
+ */
+
+
 public class PrinterSingleton {
     private volatile static PrinterSingleton uniquePrinter;
     private boolean isEmpty ;
