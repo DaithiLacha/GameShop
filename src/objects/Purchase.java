@@ -1,6 +1,5 @@
 package objects;
 
-import adapter.TradeIn;
 import adapter.TradeInAdapter;
 import decorator.Game;
 import observer.Customer;

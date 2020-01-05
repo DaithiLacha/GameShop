@@ -11,11 +11,6 @@ public class Card implements Payment {
     private String cvv;
     private String expDate;
 
-    public void makePayment(double sum, String name) {
-        cardInfo();
-        System.out.println("Purchased by " + name + "\nPaid by card: €" + Math.round(sum*100.0)/100.0);
-    }
-
     public String getCardNum() {
         return cardNum;
     }
@@ -58,7 +53,7 @@ public class Card implements Payment {
         this.cardName = cardName;
     }
 
-    private void cardInfo() {
+    public void makePayment(double sum, String name) {
         BufferedReader info = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.println("Card Name: ");
@@ -76,5 +71,4 @@ public class Card implements Payment {
             e.printStackTrace();
         }
     }
-
 }

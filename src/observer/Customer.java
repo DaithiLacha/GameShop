@@ -45,9 +45,14 @@ public class Customer implements Observer {
     }
 
     public void setMembership(Membership membership) {
-        this.membership = membership;
-        if(membership == Membership.PREMIUM) {
+        if(this.membership == Membership.PREMIUM && membership == Membership.STANDARD) {
+            this.membership = membership;
+            newsUpdate.removeObserver(this);
+        }else if(this.membership == Membership.STANDARD && membership == Membership.PREMIUM) {
+            this.membership = membership;
             newsUpdate.registerObserver(this);
+        }else {
+            this.membership = membership;
         }
     }
 

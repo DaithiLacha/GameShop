@@ -2,10 +2,6 @@ package factory;
 
 import decorator.Game;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 public class AssignGameType {
     private GameFactory factory;
 

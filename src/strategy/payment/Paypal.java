@@ -25,11 +25,6 @@ public class Paypal implements Payment{
     }
 
     public void makePayment(double sum, String name) {
-        payPalInfo();
-//        System.out.println("Purchased by: " + name + "\nPaid by PayPal: €" + Math.round(sum*100.0)/100.0);
-    }
-
-    private void payPalInfo() {
         BufferedReader info = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.println("Username: ");
