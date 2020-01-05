@@ -2,7 +2,7 @@ package decorator;
 
 public class PCGame extends Game {
     public PCGame() {
-        platform = "Unknown platform";
+        description = "PC";
     }
 
     public double cost() {

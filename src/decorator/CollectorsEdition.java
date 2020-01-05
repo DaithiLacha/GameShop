@@ -7,8 +7,8 @@ public class CollectorsEdition extends AddOnDecorator {
     }
 
     @Override
-    public String getDescripiton() {
-        return "Collector's Edition";
+    public String getDescription() {
+        return game.getDescription() + " and Collector's Edition";
     }
 
     public double cost() {

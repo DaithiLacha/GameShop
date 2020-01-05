@@ -34,10 +34,14 @@ public class Driver {
         newsUpdate.makeAnnouncement("Cyberpunk 2022 is now available to premium members for pre-order");
 
         Game gta = new PCGame();
-        gta = new CollectorsEdition(gta);
-        gta = new SeasonPass(gta);
+        System.out.println(gta.getDescription());
         gta.setName("Grand Theft Auto V");
         gta.setGenre("Open World");
+        gta = new CollectorsEdition(gta);
+        System.out.println(gta.getDescription());
+        gta = new SeasonPass(gta);
+        System.out.println(gta.getDescription());
+
 
         Purchase daveGta = new Purchase();
         daveGta.setCustomer(dave);

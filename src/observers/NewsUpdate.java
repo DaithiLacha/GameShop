@@ -1,7 +1,5 @@
 package observers;
 
-import decorator.Game;
-
 import java.util.ArrayList;
 
 public class NewsUpdate implements Subject {

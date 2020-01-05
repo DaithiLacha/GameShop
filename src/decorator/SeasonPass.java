@@ -6,8 +6,8 @@ public class SeasonPass extends AddOnDecorator {
     }
 
     @Override
-    public String getDescripiton() {
-        return "Season Pass";
+    public String getDescription() {
+        return game.getDescription() + " and Season Pass";
     }
 
     public double cost() {

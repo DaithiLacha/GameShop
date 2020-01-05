@@ -48,6 +48,7 @@ public class Purchase {
 
     public void setPayment(Payment payment) {
         this.payment = payment;
+        payment.makePayment(netPrice(), customer.getName());
     }
 
     private double netPrice() {

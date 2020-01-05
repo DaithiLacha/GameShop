@@ -2,7 +2,7 @@ package decorator;
 
 public class XBoxGame extends Game {
     public XBoxGame() {
-        platform = "XBox";
+        description = "XBox";
     }
 
     public  double cost() {
