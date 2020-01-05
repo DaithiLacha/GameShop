@@ -1,14 +1,17 @@
+import adapter.TradeIn;
+import adapter.TradeInAdapter;
 import decorator.CollectorsEdition;
 import decorator.PCGame;
 import decorator.SeasonPass;
-import factory.AssignSale;
-import factory.SaleFactory;
+import factory.AssignGameType;
+import factory.GameFactory;
 import objects.Purchase;
 import observer.Customer;
 import decorator.Game;
 import observer.NewsUpdate;
 import strategy.memberships.Membership;
 import strategy.payment.Paypal;
+import strategy.sales.Christmas;
 
 import java.util.GregorianCalendar;
 
@@ -35,22 +38,15 @@ public class Driver {
         newsUpdate.makeAnnouncement("Cyberpunk 2022 is now available to premium members for pre-order");
 
         Game gta = new PCGame();
-        System.out.println(gta.getDescription());
         gta.setName("Grand Theft Auto V");
         gta.setGenre("Open World");
-        gta = new CollectorsEdition(gta);
-        System.out.println(gta.getDescription());
-        gta = new SeasonPass(gta);
-        System.out.println(gta.getDescription());
 
 
         Purchase daveGta = new Purchase();
         daveGta.setCustomer(dave);
         daveGta.setGame(gta);
-        SaleFactory saleFactory = new SaleFactory();
-        AssignSale assignSale = new AssignSale(saleFactory);
-        daveGta.setSale(assignSale.determineSale("Christmas"));
-        daveGta.setPayment(new Paypal());
+        daveGta.setSale(new Christmas());
+        daveGta.setPayment(new TradeInAdapter(new TradeIn()));
         System.out.println(daveGta.printReceipt());
 
 

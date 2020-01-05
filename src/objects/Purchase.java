@@ -1,5 +1,7 @@
 package objects;
 
+import adapter.TradeIn;
+import adapter.TradeInAdapter;
 import decorator.Game;
 import observer.Customer;
 import strategy.payment.Cash;
@@ -56,21 +58,18 @@ public class Purchase {
     }
 
     public String printReceipt() {
-        return "Customer name: " + customer.getName() +
-                "\nTitle: " + game.getName() +
-                "\nPayment Type: " + payment.toString() +
-                "\nFull Details: " + game.getDescription() +
-                "\nTotal: " + String.format("€%.2f", netPrice());
-    }
-
-    @Override
-    public String toString() {
-        return "Purchase:\n" +
-                " customer=" + customer.getName() +
-                "\n sale=" + sale.getName() +
-                "\n game=" + game.getName() +
-                "\n payment=" + payment.toString() +
-                "\n price=" + String.format("€%.2f", netPrice());
+        if(payment instanceof TradeInAdapter) {
+            return "Customer name: " + customer.getName() +
+                    "\nTitle: " + game.getName() +
+                    "\nFull Details: " + game.getDescription() +
+                    "\nPayment Type: " + payment.toString();
+        }else {
+            return "Customer name: " + customer.getName() +
+                    "\nTitle: " + game.getName() +
+                    "\nPayment Type: " + payment.toString() +
+                    "\nFull Details: " + game.getDescription() +
+                    "\nTotal: " + String.format("€%.2f", netPrice());
+        }
     }
 }
 
