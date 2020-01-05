@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Card implements Payment {
+    private String cardName;
     private String cardNum;
     private String cvv;
     private String expDate;
@@ -39,9 +40,30 @@ public class Card implements Payment {
         this.expDate = expDate;
     }
 
+    @Override
+    public String toString() {
+        return "Card{" +
+                "cardName='" + cardName + '\'' +
+                ", cardNum='" + cardNum + '\'' +
+                ", cvv='" + cvv + '\'' +
+                ", expDate='" + expDate + '\'' +
+                '}';
+    }
+
+    public String getCardName() {
+        return cardName;
+    }
+
+    public void setCardName(String cardName) {
+        this.cardName = cardName;
+    }
+
     private void cardInfo() {
         BufferedReader info = new BufferedReader(new InputStreamReader(System.in));
         try {
+            System.out.println("Card Name: ");
+            cardName = info.readLine();
+
             System.out.println("Card Number: ");
             cardNum = info.readLine();
 
@@ -55,12 +77,4 @@ public class Card implements Payment {
         }
     }
 
-    @Override
-    public String toString() {
-        return "Card{" +
-                "cardNum='" + cardNum + '\'' +
-                ", cvv='" + cvv + '\'' +
-                ", expDate='" + expDate + '\'' +
-                '}';
-    }
 }

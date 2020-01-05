@@ -4,12 +4,11 @@ import decorator.SeasonPass;
 import factory.AssignSale;
 import factory.SaleFactory;
 import objects.Purchase;
-import observers.Customer;
+import observer.Customer;
 import decorator.Game;
-import observers.NewsUpdate;
+import observer.NewsUpdate;
 import strategy.memberships.Membership;
 import strategy.payment.Paypal;
-import strategy.sales.Christmas;
 
 import java.util.GregorianCalendar;
 
@@ -52,7 +51,7 @@ public class Driver {
         AssignSale assignSale = new AssignSale(saleFactory);
         daveGta.setSale(assignSale.determineSale("Christmas"));
         daveGta.setPayment(new Paypal());
-        System.out.println(daveGta.toString());
+        System.out.println(daveGta.printReceipt());
 
 
     }

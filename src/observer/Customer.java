@@ -1,10 +1,7 @@
-package observers;
+package observer;
 
-import observers.NewsUpdate;
-import observers.Observer;
 import strategy.memberships.Membership;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 public class Customer implements Observer {

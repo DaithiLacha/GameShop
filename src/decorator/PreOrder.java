@@ -6,6 +6,16 @@ public class PreOrder extends AddOnDecorator {
     }
 
     @Override
+    public String getName() {
+        return game.getName();
+    }
+
+    @Override
+    public String getGenre() {
+        return game.getGenre();
+    }
+
+    @Override
     public String getDescription() {
         return game.getDescription() + "and Preorder";
     }

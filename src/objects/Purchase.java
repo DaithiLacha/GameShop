@@ -1,7 +1,7 @@
 package objects;
 
 import decorator.Game;
-import observers.Customer;
+import observer.Customer;
 import strategy.payment.Cash;
 import strategy.payment.Payment;
 import strategy.sales.None;
@@ -53,6 +53,14 @@ public class Purchase {
 
     private double netPrice() {
         return (game.cost() - (game.cost() * sale.applyDiscount()));
+    }
+
+    public String printReceipt() {
+        return "Customer name: " + customer.getName() +
+                "\nTitle: " + game.getName() +
+                "\nPayment Type: " + payment.toString() +
+                "\nFull Details: " + game.getDescription() +
+                "\nTotal: " + String.format("€%.2f", netPrice());
     }
 
     @Override
